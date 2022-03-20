@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+	/* if we add padding or any margin to an element, it doesnt change its width. */
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	margin: 0;
+	height: 100vh;
+	overflow: auto;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	display: flex;
+	width: 90vw;
+}
+.cards {
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 80vh;
+	border-radius: 50px;
+	cursor: pointer;
+	flex: 0.7;
+	margin: 10px;
+	position: relative;
+	transition: flex 0.7s ease-out;
+	color: #fff;
+}
+.cards h3 {
+	font-size: 24px;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	opacity: 0;
+}
+
+.cards.active {
+	flex: 3;
+	width: 100%;
+	border: 1px solid;
+	box-shadow: 2px 5px #72736e;
+}
+
+.cards.active h3 {
+	opacity: 1;
+	font-size: 26px;
+	background-image: linear-gradient(60deg, #020024, #72736e);
+}
+
+@media (max-width: 480px) {
+	.container {
+		width: 100vw;
+	}
+	.cards:nth-of-type(4),
+	.cards:nth-of-type(5) {
+		display: none;
+	}
+}
